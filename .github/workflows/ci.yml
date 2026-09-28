@@ -58,8 +58,8 @@ jobs:
         with:
           node-version: 22.14.0
       - run: pnpm install --no-frozen-lockfile
-      - run: pnpm --filter @nexus/web exec playwright install --with-deps chromium
-      - run: pnpm --filter @nexus/web test:e2e
+      - run: pnpm --filter @th7/enterprise-suite-web exec playwright install --with-deps chromium
+      - run: pnpm --filter @th7/enterprise-suite-web test:e2e
 
   load-smoke:
     runs-on: ubuntu-latest
@@ -74,14 +74,14 @@ jobs:
           node-version: 22.14.0
       - run: pnpm install --no-frozen-lockfile
       - name: Build auth process-health endpoint
-        run: pnpm --filter @nexus/auth-service build
+        run: pnpm --filter @th7/enterprise-suite-auth-service build
       - name: Start auth service
         env:
           NODE_ENV: production
           CORS_ORIGINS: http://localhost:3000
           PORT: 3001
         run: |
-          pnpm --filter @nexus/auth-service start > /tmp/nexus-auth.log 2>&1 &
+          pnpm --filter @th7/enterprise-suite-auth-service start > /tmp/th7-auth.log 2>&1 &
           curl --fail --retry 30 --retry-connrefused --retry-delay 1 http://127.0.0.1:3001/api/v1/health
       - uses: grafana/setup-k6-action@v1
       - name: Run health endpoint smoke load

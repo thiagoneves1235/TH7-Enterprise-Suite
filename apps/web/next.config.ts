@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@nexus/ui"],
+  transpilePackages: ["@th7/enterprise-suite-ui"],
   poweredByHeader: false,
   reactStrictMode: true,
 };

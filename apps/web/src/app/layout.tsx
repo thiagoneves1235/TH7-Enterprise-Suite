@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NEXUS ONE | Workspace",
-  description: "Workspace empresarial NEXUS ONE",
+  title: "TH7 Enterprise Suite | Workspace",
+  description: "Workspace empresarial TH7 Enterprise Suite",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

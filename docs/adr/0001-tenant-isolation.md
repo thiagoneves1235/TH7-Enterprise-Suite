@@ -5,7 +5,7 @@
 
 ## Contexto
 
-NEXUS ONE compartilha uma instalação PostgreSQL entre empresas. Filtro aplicado somente na camada HTTP permite vazamento por query esquecida e relações cruzadas.
+TH7 Enterprise Suite compartilha uma instalação PostgreSQL entre empresas. Filtro aplicado somente na camada HTTP permite vazamento por query esquecida e relações cruzadas.
 
 ## Decisão
 

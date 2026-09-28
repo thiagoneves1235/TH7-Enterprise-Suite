@@ -1,5 +1,5 @@
 {
-  "name": "@nexus/auth-service",
+  "name": "@th7/enterprise-suite-auth-service",
   "version": "0.1.0",
   "private": true,
   "scripts": {

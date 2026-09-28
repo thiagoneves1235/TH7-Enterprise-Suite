@@ -1,13 +1,13 @@
-name: nexus-one-local
+name: th7-enterprise-suite-local
 
 services:
   postgres:
     image: postgres:17-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_DB: nexus
-      POSTGRES_USER: nexus_dev
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nexus-local-not-for-production}
+      POSTGRES_DB: th7_enterprise_suite
+      POSTGRES_USER: th7_dev
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-th7-local-not-for-production}
     ports:
       - "127.0.0.1:5432:5432"
     volumes:
@@ -23,8 +23,8 @@ services:
     image: redis:7.4-alpine
     restart: unless-stopped
     environment:
-      REDIS_PASSWORD: ${REDIS_PASSWORD:-nexus-local-not-for-production}
-    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-nexus-local-not-for-production}"]
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-th7-local-not-for-production}
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-th7-local-not-for-production}"]
     ports:
       - "127.0.0.1:6379:6379"
     volumes:
@@ -39,8 +39,8 @@ services:
     image: rabbitmq:4.1-management-alpine
     restart: unless-stopped
     environment:
-      RABBITMQ_DEFAULT_USER: nexus_dev
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-nexus-local-not-for-production}
+      RABBITMQ_DEFAULT_USER: th7_dev
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-th7-local-not-for-production}
     ports:
       - "127.0.0.1:5672:5672"
       - "127.0.0.1:15672:15672"
@@ -113,8 +113,8 @@ services:
     image: grafana/grafana:11.5.2
     restart: unless-stopped
     environment:
-      GF_SECURITY_ADMIN_USER: ${GRAFANA_USER:-nexus_dev}
-      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-nexus-local-not-for-production}
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_USER:-th7_dev}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-th7-local-not-for-production}
       GF_USERS_ALLOW_SIGN_UP: "false"
     ports:
       - "127.0.0.1:3002:3000"

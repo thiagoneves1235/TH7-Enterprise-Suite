@@ -1,4 +1,4 @@
-# Auditoria Técnica do NEXUS ONE
+# Auditoria Técnica do TH7 Enterprise Suite
 
 **Data:** 2026-09-28
 

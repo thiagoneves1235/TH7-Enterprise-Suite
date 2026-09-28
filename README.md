@@ -1,4 +1,4 @@
-# NEXUS ONE
+# TH7 Enterprise Suite
 
 Fundação de uma plataforma SaaS multi-tenant. Este workspace ainda **não é uma plataforma pronta para produção**: os domínios funcionais, integrações externas, controles operacionais e evidências de segurança precisam ser implementados e validados antes de qualquer uso com dados reais.
 
@@ -43,7 +43,7 @@ docker compose --env-file .env -f infra/docker/compose.yaml up -d
 
 Os serviços locais de dados usam credenciais descartáveis para desenvolvimento. Troque-as antes de abrir qualquer porta para outras interfaces de rede; os valores padrão não podem ser reutilizados fora da máquina local. Segredos de produção devem ser fornecidos pelo provedor de secrets, nunca commitados. `pnpm install` cria o primeiro lockfile; ele deve ser revisado e commitado antes de tratar os builds como reprodutíveis.
 
-O frontend está disponível em `http://localhost:3000` após `pnpm --filter @nexus/web dev`. O bootstrap HTTP de identidade usa `http://localhost:3001/api/v1/health`; ainda não oferece cadastro nem autenticação. Grafana local usa a porta `3002`, Jaeger `16686`, Prometheus `9090` e RabbitMQ Management `15672`.
+O frontend está disponível em `http://localhost:3000` após `pnpm --filter @th7/enterprise-suite-web dev`. O bootstrap HTTP de identidade usa `http://localhost:3001/api/v1/health`; ainda não oferece cadastro nem autenticação. Grafana local usa a porta `3002`, Jaeger `16686`, Prometheus `9090` e RabbitMQ Management `15672`.
 
 ## Estado e limites
 

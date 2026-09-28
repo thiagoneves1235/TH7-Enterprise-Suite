@@ -27,7 +27,7 @@ async function bootstrap(): Promise<void> {
   if (!production && config.get<boolean>("SWAGGER_ENABLED")) {
     const document = SwaggerModule.createDocument(
       app,
-      new DocumentBuilder().setTitle("NEXUS ONE Auth Service").setVersion("1.0").build(),
+      new DocumentBuilder().setTitle("TH7 Enterprise Suite Auth Service").setVersion("1.0").build(),
     );
     SwaggerModule.setup("api/v1/docs", app, document);
   }

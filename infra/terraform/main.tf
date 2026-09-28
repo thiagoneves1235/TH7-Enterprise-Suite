@@ -1,13 +1,13 @@
 locals {
   common_tags = merge({
-    application = "nexus-one"
+    application = "th7-enterprise-suite"
     environment = var.environment
     managed_by  = "terraform"
   }, var.tags)
 }
 
 resource "azurerm_resource_group" "platform" {
-  name     = "rg-nexus-one-${var.environment}"
+  name     = "rg-th7-enterprise-suite-${var.environment}"
   location = var.location
   tags     = local.common_tags
 }

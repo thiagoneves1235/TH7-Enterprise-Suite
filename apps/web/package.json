@@ -1,5 +1,5 @@
 {
-  "name": "@nexus/web",
+  "name": "@th7/enterprise-suite-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@nexus/ui": "workspace:*",
+    "@th7/enterprise-suite-ui": "workspace:*",
     "@tanstack/react-query": "^5.87.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

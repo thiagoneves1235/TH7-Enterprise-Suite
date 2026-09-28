@@ -39,9 +39,9 @@ export default function DashboardPage() {
   return (
     <div className="app-frame">
       <aside className="sidebar">
-        <a className="brand" href="#inicio" aria-label="NEXUS ONE início">
+        <a className="brand" href="#inicio" aria-label="TH7 Enterprise Suite início">
           <span className="brand-mark"><Blocks size={19} strokeWidth={2.3} /></span>
-          <span>NEXUS<span className="brand-light">ONE</span></span>
+          <span>TH7<span className="brand-light">Enterprise Suite</span></span>
         </a>
 
         <button className="workspace-switcher" type="button">
@@ -127,12 +127,12 @@ export default function DashboardPage() {
           </section>
 
           <section className="bottom-banner" id="modulos">
-            <div className="banner-copy"><span className="banner-kicker"><Bot size={14} /> NEXUS INTELLIGENCE</span><h2>Seu trabalho, com mais contexto.</h2><p>Conecte seus dados e prepare seu workspace para insights assistidos por IA.</p></div>
+            <div className="banner-copy"><span className="banner-kicker"><Bot size={14} /> TH7 INTELLIGENCE</span><h2>Seu trabalho, com mais contexto.</h2><p>Conecte seus dados e prepare seu workspace para insights assistidos por IA.</p></div>
             <button className="banner-button" type="button">Explorar inteligência <ArrowUpRight size={15} /></button>
             <span className="banner-spark spark-one"><Sparkles size={14} /></span><span className="banner-spark spark-two"><Sparkles size={11} /></span>
           </section>
 
-          <footer className="page-footer"><span>NEXUS ONE <span className="footer-dot">·</span> Workspace empresarial</span><span>Ambiente não conectado a dados de produção</span></footer>
+          <footer className="page-footer"><span>TH7 Enterprise Suite <span className="footer-dot">·</span> Workspace empresarial</span><span>Ambiente não conectado a dados de produção</span></footer>
         </div>
       </main>
     </div>

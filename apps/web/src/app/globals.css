@@ -24,7 +24,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--teal); outline-
 .sidebar { position: fixed; z-index: 3; inset: 0 auto 0 0; display: flex; width: 248px; flex-direction: column; border-right: 1px solid var(--line); background: #fff; padding: 24px 15px 16px; }
 .brand { display: flex; align-items: center; gap: 10px; margin: 1px 5px 30px; font-family: var(--display); font-size: 17px; font-weight: 750; letter-spacing: 0; }
 .brand-mark { display: grid; width: 31px; height: 31px; place-items: center; border-radius: 9px; color: #fff; background: var(--teal); }
-.brand-light { margin-left: 3px; color: #99a4a4; font-weight: 500; }
+.brand-light { margin-left: 3px; color: #99a4a4; font-size: 10px; font-weight: 500; white-space: nowrap; }
 .workspace-switcher { display: flex; min-width: 0; align-items: center; gap: 10px; padding: 9px; border: 1px solid var(--line); border-radius: 7px; background: #fff; text-align: left; cursor: pointer; }
 .workspace-avatar, .profile-avatar { display: grid; flex: 0 0 auto; width: 31px; height: 31px; place-items: center; border-radius: 7px; color: #fff; background: #d77754; font-family: var(--display); font-size: 15px; font-weight: 700; }
 .workspace-copy, .profile-copy { display: grid; min-width: 0; flex: 1; gap: 3px; }

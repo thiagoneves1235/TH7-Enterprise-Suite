@@ -15,19 +15,19 @@ describe("PostgreSQL tenant boundaries and audit trail", () => {
   beforeAll(async () => {
     const migration = resolve(__dirname, "../../../infra/docker/postgres/init/001_core.sql");
     container = await new PostgreSqlContainer("postgres:17-alpine")
-      .withDatabase("nexus_test")
-      .withUsername("nexus_owner")
+      .withDatabase("th7_enterprise_suite_test")
+      .withUsername("th7_test_owner")
       .withPassword("test-owner-password")
       .withInitScripts(migration)
       .start();
 
     owner = new Client({ connectionString: container.getConnectionUri() });
     await owner.connect();
-    await owner.query("CREATE ROLE nexus_runtime LOGIN PASSWORD 'test-runtime-password' NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOBYPASSRLS");
-    await owner.query("GRANT CONNECT ON DATABASE nexus_test TO nexus_runtime");
-    await owner.query("GRANT USAGE ON SCHEMA public, app TO nexus_runtime");
-    await owner.query("GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO nexus_runtime");
-    await owner.query("GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA app TO nexus_runtime");
+    await owner.query("CREATE ROLE th7_test_runtime LOGIN PASSWORD 'test-runtime-password' NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOBYPASSRLS");
+    await owner.query("GRANT CONNECT ON DATABASE th7_enterprise_suite_test TO th7_test_runtime");
+    await owner.query("GRANT USAGE ON SCHEMA public, app TO th7_test_runtime");
+    await owner.query("GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO th7_test_runtime");
+    await owner.query("GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA app TO th7_test_runtime");
 
     await owner.query(
       "INSERT INTO tenants (id, slug, display_name) VALUES ($1, 'tenant-a', 'Tenant A'), ($2, 'tenant-b', 'Tenant B')",
@@ -35,7 +35,7 @@ describe("PostgreSQL tenant boundaries and audit trail", () => {
     );
 
     runtime = new Client({
-      connectionString: container.getConnectionUri().replace("nexus_owner:test-owner-password", "nexus_runtime:test-runtime-password"),
+      connectionString: container.getConnectionUri().replace("th7_test_owner:test-owner-password", "th7_test_runtime:test-runtime-password"),
     });
     await runtime.connect();
 
