@@ -185,6 +185,16 @@ Os testes atuais validam a fundação e não substituem testes de autenticação
 
 Detalhes operacionais estão em [Infraestrutura e deploy](docs/deployment.md).
 
+### Publicação gratuita no GitHub Pages
+
+O workflow [`deploy-pages.yml`](.github/workflows/deploy-pages.yml) publica automaticamente o frontend estático a cada push na branch `main`. O endereço esperado é:
+
+```text
+https://thiagoneves1235.github.io/TH7-Enterprise-Suite/
+```
+
+Para ativar a publicação no repositório, abra **Settings > Pages**, selecione **GitHub Actions** em _Build and deployment_ e faça um novo push ou execute o workflow manualmente na aba **Actions**. GitHub Pages hospeda apenas o frontend exportado; as APIs e serviços NestJS continuam exigindo um ambiente separado.
+
 ## Segurança e dados
 
 Não use dados pessoais, financeiros ou credenciais reais neste estado do projeto. Antes de qualquer uso real, ainda são necessários autenticação e autorização completas, gestão e rotação de segredos, criptografia, CSP/CSRF, proteção de uploads, filtros ACL no RAG, prevenção de prompt injection, threat model, varredura de supply chain, pentest, retenção/privacidade, backup/restore e plano de incidentes.
